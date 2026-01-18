@@ -80,7 +80,7 @@ Benchmark for scientific correctness in text-to-video models
 **🤖 [NVIDIA NeMo Gym](https://github.com/NVIDIA-NeMo/Gym)** ⭐ 603  
 Build RL environments for LLM training  
 → scalable RL training, reward profiling, GRPO  
-*Integrated Sokoban & Tetris*
+*Integrating Sokoban & Tetris*
 
 </td>
 <td width="50%">
@@ -106,16 +106,13 @@ LLM environment framework for interactive evaluation
 
 #### 🧠 Current Focus
 - 🔄 Scaling agent evaluation with interactive environments
-- ⚡ Training & serving efficiency on multi-GPU clusters
+- ⚡ Training & serving efficiency on multi-GPUs
 - 🎯 Reward modeling and RL for LLM agents
 
 ---
 
 #### 🔗 Links
 - 🌐 **Website**: [hao-ai-lab.github.io/people/](https://hao-ai-lab.github.io/people/)
-- 📝 **Blog**: Zhihu / Medium
-- 💼 **LinkedIn**: (optional)
-- 📄 **Google Scholar**: (if applicable)
 
 ---
 
