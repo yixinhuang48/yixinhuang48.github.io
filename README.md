@@ -2,7 +2,7 @@
 
 ### Hi, I'm Yixin 👋
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Roboto+Mono&size=24&duration=3000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=LLM+Systems+%7C+Evaluation+%7C+GPU+Infrastructure;M.S.+Computer+Science+Student" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Roboto+Mono&size=24&duration=3000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=LLM+Systems+%7C+Evaluation;M.S.+Computer+Science+Student" alt="Typing SVG" />
 
 I work on **LLM systems, evaluation, and GPU-accelerated ML infrastructure**.  
 **RA @ UCSD Hao AI Lab** | M.S. Computer Science student  
