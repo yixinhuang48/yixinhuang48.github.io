@@ -51,6 +51,11 @@ I work on **LLM systems, evaluation, and GPU-accelerated ML infrastructure**.
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
+![vLLM](https://img.shields.io/badge/vLLM-FF6B00?style=for-the-badge&logo=python&logoColor=white)
+![SGLang](https://img.shields.io/badge/SGLang-FF6B9D?style=for-the-badge&logo=python&logoColor=white)
+![NeMo RL](https://img.shields.io/badge/NeMo%20RL-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
+![Areal](https://img.shields.io/badge/Areal-028CF0?style=for-the-badge&logo=python&logoColor=white)
+
 ---
 
 #### 🛠 Selected Projects
