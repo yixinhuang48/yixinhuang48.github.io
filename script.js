@@ -1,34 +1,97 @@
-// Smooth scroll for navigation links
+// ===== Typing Animation =====
+const typingTexts = [
+    'LLM Systems & Evaluation',
+    'GPU Infrastructure',
+    'Agent Evaluation',
+    'ML Research'
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingElement = document.querySelector('.typing-text');
+
+function type() {
+    const currentText = typingTexts[textIndex];
+    
+    if (isDeleting) {
+        typingElement.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingElement.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentText.length) {
+        typeSpeed = 2000; // Pause at end
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % typingTexts.length;
+        typeSpeed = 500; // Pause before next word
+    }
+
+    setTimeout(type, typeSpeed);
+}
+
+// Start typing animation
+document.addEventListener('DOMContentLoaded', () => {
+    if (typingElement) {
+        setTimeout(type, 1000);
+    }
+});
+
+// ===== Mobile Navigation =====
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    });
+}
+
+// Close mobile nav when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        navToggle.classList.remove('active');
+    });
+});
+
+// ===== Smooth Scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
         }
     });
 });
 
-// Navbar background on scroll
-const nav = document.querySelector('.nav');
-let lastScroll = 0;
+// ===== Navbar Background on Scroll =====
+const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 50) {
-        nav.style.background = 'rgba(10, 10, 15, 0.95)';
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(10, 10, 15, 0.95)';
     } else {
-        nav.style.background = 'rgba(10, 10, 15, 0.8)';
+        navbar.style.background = 'rgba(10, 10, 15, 0.8)';
     }
-    
-    lastScroll = currentScroll;
 });
 
-// Intersection Observer for animations
+// ===== Intersection Observer for Animations =====
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -43,41 +106,37 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Animate sections on scroll
-document.querySelectorAll('.section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-    observer.observe(section);
+// Observe elements for animation
+document.querySelectorAll('.project-card, .blog-card, .contact-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
 });
 
-// Animate project cards with stagger
-document.querySelectorAll('.project-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
-    observer.observe(card);
-});
+// ===== Active Nav Link on Scroll =====
+const sections = document.querySelectorAll('section[id]');
 
-// Animate blog cards with stagger
-document.querySelectorAll('.blog-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
-    observer.observe(card);
-});
-
-// Tech tags hover effect
-document.querySelectorAll('.tech-tag').forEach(tag => {
-    tag.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.05)';
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
     });
-    tag.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
     });
 });
 
-// Console easter egg
-console.log('%c👋 Hey there, curious developer!', 'font-size: 20px; font-weight: bold;');
-console.log('%cInterested in LLM systems? Let\'s connect!', 'font-size: 14px; color: #ff6b9d;');
-console.log('%chttps://github.com/yixinhuang48', 'font-size: 12px; color: #7c3aed;');
+// ===== Console Easter Egg =====
+console.log('%c👋 Hi there!', 'font-size: 24px; font-weight: bold;');
+console.log('%cInterested in my work? Check out my GitHub: https://github.com/yixinhuang48', 'font-size: 14px;');
