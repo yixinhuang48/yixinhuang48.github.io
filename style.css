@@ -160,6 +160,11 @@ a { color: inherit; text-decoration: none; }
 .post-content p { margin-bottom: 1.2rem; color: var(--text-secondary); font-size: 1rem; }
 .post-content p + p { margin-top: 0.2rem; }
 .post-content em { color: var(--text-primary); font-style: normal; }
+.post-content strong { color: var(--text-primary); font-weight: 600; }
+.post-content a { color: var(--accent-primary); text-decoration: none; border-bottom: 1px solid transparent; transition: var(--transition); }
+.post-content a:hover { color: var(--accent-secondary); border-bottom-color: currentColor; }
+.highlight-link { padding: 0.1rem 0.35rem; border-radius: 999px; background: rgba(255, 107, 157, 0.12); border: 1px solid rgba(255, 107, 157, 0.25); font-family: var(--font-mono); font-size: 0.9rem; }
+.highlight-link:hover { background: rgba(124, 58, 237, 0.18); border-color: rgba(124, 58, 237, 0.4); }
 .post-content h2 { margin: 2rem 0 1rem; font-size: 1.3rem; color: var(--text-primary); }
 .lang-label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-secondary); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.08em; }
 .post-divider { height: 1px; background: var(--border-color); margin: 2.5rem 0; }
