@@ -224,30 +224,21 @@
                 <div class="map-header">
                     <div>
                         <h3>Visitor Map</h3>
-                        <p>Illustrative regions from recent visits</p>
+                        <p>Live widget powered by MapMyVisitors</p>
                     </div>
-                    <span class="map-pill">Updated weekly</span>
+                    <span class="map-pill">Live</span>
                 </div>
-                <div class="map-visual" role="img" aria-label="Stylized world map with glowing visitor markers">
-                    <svg class="world-map" viewBox="0 0 800 400" aria-hidden="true">
-                        <rect x="40" y="120" width="220" height="120" rx="48"></rect>
-                        <rect x="190" y="210" width="140" height="150" rx="50"></rect>
-                        <rect x="310" y="105" width="160" height="110" rx="45"></rect>
-                        <rect x="360" y="210" width="170" height="140" rx="55"></rect>
-                        <rect x="520" y="120" width="230" height="120" rx="48"></rect>
-                        <rect x="620" y="250" width="140" height="80" rx="40"></rect>
-                        <rect x="260" y="60" width="70" height="45" rx="22"></rect>
-                    </svg>
-                    <span class="map-marker marker-na" aria-hidden="true"></span>
-                    <span class="map-marker marker-sa" aria-hidden="true"></span>
-                    <span class="map-marker marker-eu" aria-hidden="true"></span>
-                    <span class="map-marker marker-af" aria-hidden="true"></span>
-                    <span class="map-marker marker-as" aria-hidden="true"></span>
-                    <span class="map-marker marker-au" aria-hidden="true"></span>
+                <div class="map-visual map-widget" aria-label="MapMyVisitors widget">
+                    <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=pebrPUrCMFd5oM9__uS8r2xPqIgTgbtBb3F3Wu85tUA&cl=ffffff&w=a"></script>
+                    <noscript>
+                        <a href="https://mapmyvisitors.com/web/1c263" title="Visit tracker">
+                            <img src="https://mapmyvisitors.com/map.png?d=pebrPUrCMFd5oM9__uS8r2xPqIgTgbtBb3F3Wu85tUA&cl=ffffff" alt="Visitor map">
+                        </a>
+                    </noscript>
                 </div>
                 <div class="map-legend">
-                    <div class="legend-item"><span class="legend-dot"></span> Recent visits</div>
-                    <div class="legend-item"><span class="legend-dot muted"></span> Past visits</div>
+                    <div class="legend-item"><span class="legend-dot"></span> Live traffic</div>
+                    <div class="legend-item"><span class="legend-dot muted"></span> Historical visits</div>
                 </div>
             </div>
         </div>
