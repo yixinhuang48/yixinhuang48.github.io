@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context & Learn in Public | Yixin Huang</title>
+    <meta name="description" content="A bilingual reflection on context and learning in public.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="post-page">
+    <header class="post-header">
+        <div class="post-container">
+            <p class="hero-greeting">Blog</p>
+            <h1 class="post-title">Context & Learn in Public / 语境与公开学习</h1>
+            <p class="post-meta">Jan 29, 2026 · Bilingual</p>
+            <div class="post-actions">
+                <a href="#english">Jump to English</a>
+                <a href="#chinese">跳转到中文</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="post-container">
+        <article class="post-content">
+            <section id="english">
+                <p class="lang-label">English</p>
+                <p>Recently, when listening to podcasts and watching interviews, I kept hearing two words: <em>context</em> and <em>learn in public</em>.</p>
+                <p>In conversations about learn in public (a term introduced by Zara Zhang), the point is not to wait for results to feel polished before sharing. Instead, the emphasis is on showing whatever has already been made at each stage. Code, experiments, and even ideas that are still evolving are all worth putting out. The value is not the output itself, but the compounding effect it creates over time.</p>
+                <p>I felt something similar while listening to a whyNotTV conversation. One takeaway was that whether something can move forward does not depend only on skill or intelligence. It also depends on whether you are in a sufficiently complete context, and whether you understand the background, constraints, and operating logic behind the problem.</p>
+                <p>These ideas stayed with me because they map to where I am right now.</p>
+                <p>Over the past while, I have barely written on Zhihu. Partly because school and research take most of my energy, but also because as I work on more concrete problems, I have become more cautious about expressing myself. Looking back at some earlier writing, it feels a bit naive or overly opinionated, though those were still genuine thoughts at the time.</p>
+                <p>Once you start engaging with more complex problems and realize how much judgment depends on environment and context, it becomes harder to draw quick conclusions. Many things are not “figured out” before doing them; they are corrected continuously in the process of doing.</p>
+                <p>In this period, I have put most of my time into work on video model evaluation.</p>
+                <p>Today, many video models appear strong on the surface. Image quality and instruction following are often good enough to create the illusion that the model “understands world rules.” That is exactly why context becomes more important in evaluation. How we interpret a model’s behavior depends on the problem setup, the evaluation method, and how we understand the generated video. The core goal of this work is to test whether video models truly possess scientific reasoning ability, rather than just pattern matching in vision and language.</p>
+                <p>We care less about whether a generated video looks pretty, and more about whether it depicts the correct scientific phenomenon via the right mechanism. Can the model understand physical processes, causal relations, and multi-step scientific phenomena? In this process, I started to feel the importance of context more concretely. Many key judgments do not show up in code implementations, but in the design of tasks and evaluations. We do not just write tasks that look plausible; we try to build them from real scientific experiments.</p>
+                <p>The first challenge is whether the problem is sufficiently difficult. Each prompt in VideoScience-Bench contains two or more scientific concepts, and the phenomenon must arise from their interaction. A simple example from the paper compares balloons near a flame: if the balloon contains a small amount of water, the correct outcome depends on specific heat and heat transfer, not the common-sense “balloon pops when near fire.” Similar prompts connect water flow with low-frequency speaker vibrations, or have a laser pass through a sugar solution with a concentration gradient. These require understanding both refraction and diffusion.</p>
+                <p>The second challenge is the evaluation system itself. We designed VideoScience-Judge, an evaluation based on checklists. It automatically generates a targeted checklist for each prompt, selects key frames that are causally critical, uses computer-vision scaffolding to assist judgments, and then scores several dimensions: prompt consistency, scientific correctness, dynamic accuracy, object persistence when nothing should change, and spatiotemporal continuity. In other words, we are not evaluating “whether the video looks good,” but whether it “correctly demonstrates the scientific phenomenon with the right mechanism.”</p>
+                <p>This work is currently under CVPR submission and will be released soon. The paper is already on arXiv, and the code is open-sourced on GitHub. If you are interested in these evaluations or related problems, I would love to exchange ideas and feedback.</p>
+                <p>Looking back, I realized that context and learn in public were not concepts I fully understood from the beginning.</p>
+                <p>Context determines whether something can truly be pushed forward, while learn in public is a choice that prevents the path you have walked from being wasted and lets intermediate results compound over time.</p>
+                <p>When I first chose to write things down, it was not only because I wanted to “output opinions.” On one hand, I wanted to solidify my understanding. On the other hand, these words reached more people than I expected, and the likes and follows became an unexpected but important part of the journey.</p>
+                <p>Likes, comments, and even criticism are all real feedback. Some expose vagueness in my expression, some point directly to flaws in my reasoning, and some are simple affirmations, but all of them influence how I move forward.</p>
+                <p>I do not see this feedback merely as “positive reinforcement” or “external evaluation.” More often, it is a confirmation that what I write does not happen in a vacuum. It enters a larger context. Even disagreement or rebuttal is a form of exchange and progress.</p>
+                <p>From this perspective, feedback itself is part of learn in public. It does not immediately provide answers, but it accumulates over time and pushes me to keep going. Whether the motivation comes from recognition, criticism, or being forced to re-examine my ideas, it reminds me that these efforts are not meaningless.</p>
+                <p>Writing and documenting therefore become part of research and engineering practice, not an extra burden, but a way to fix the understanding I have already formed.</p>
+                <p>This piece is not a conclusion, but a snapshot. At this point, writing it down feels sufficient.</p>
+            </section>
+
+            <div class="post-divider"></div>
+
+            <section id="chinese">
+                <p class="lang-label">中文</p>
+                <p>最近在听一些播客和看一些访谈的时候，我反复注意到两个词被提起，一个是 context，一个是 learn in public。</p>
+                <p>在一些关于 learn in public（由zara 张提出）的讨论里，大家强调的并不是等到结果足够成熟再输出，而是把已经做出来的阶段性成果直接放出来。无论是代码，实验，还是还在迭代中的想法，都值得被呈现出来。这种方式的价值不在于输出本身，而是它能够在时间维度上不断产生复利。</p>
+                <p>类似的感受也出现在最近听whyNotTV的对话中。其中一个观点就是很多事情能不能被推进，并不完全取决于技巧或智力，而是取决于你是否身处一个足够完整的语境中，是否理解问题背后的背景，约束和运行逻辑。</p>
+                <p>这些内容之所以让我印象很深，是因为它们恰好对应了我最近的状态。</p>
+                <p>最近一段时间，我几乎没怎么在知乎上写。</p>
+                <p>一方面是学业和研究本身占据了大部分精力，另一方面，也是因为在做更具体的事情时，我开始对表达变得更谨慎。回头看之前写下的一些文字，会觉得有些幼稚，也有些偏激。但不管怎么说也是当时的一些想法。</p>
+                <p>当开始接触更复杂的问题，开始意识到很多判断高度依赖于所处的环境和语境时，就很难再轻易地下结论。很多事情不是想清楚了再去做，而是在做的过程中不断被修正。</p>
+                <p>也正是在这样的情况下，我把大部分时间投入到一个和 video model evaluation 相关的工作中。</p>
+                <p>现在很多视频模型表面上能力已经足够强了，无论是画面质量还是instruction following，都很容易给人一种“模型已经理解世界规则”的错觉。也正因为如此，评估模型时所依赖的 context 变得更加重要。我们如何理解模型在做什么，本身就高度依赖于问题设定，评测方式以及我们对模型生成video的understanding。这项工作的核心目标，是尝试评估视频模型是否真的具备科学推理能力，而不是只是在做视觉和语言层面的模式匹配。不同于评估生成得结果是否好看，我们更关心的是，模型能不能理解物理过程，因果关系，以及需要多步推理才能展示的科学现象。在这个过程中，我开始更具体地体会到 context 的意义。很多关键判断并不体现在代码实现上，而是体现在问题和评测本身的设计里。我们不是随便写一些看起来合理的生成任务，而是尽量从真实的 scientific experiment 出发去构造问题。</p>
+                <p>首先第一个难点在于这个问题是否足够challenging。VideoScience-Bench 里的每个 prompt 都包含两个或更多科学概念，必须让现象必须通过概念之间的相互作用才能成立。论文里有一个对比例子就很直观，同样是气球靠近火焰，如果气球里有少量水，正确现象依赖于比热和热传递的推理，而不是“气球遇火就爆”的常识。类似的还有把水流和扬声器低频振动联系起来，或者像文中举的一个例子，把激光穿过有浓度梯度的糖溶液这种现象设计成题目。这类问题需要同时用到光学里的折射定律和扩散相关的理解。</p>
+                <p>另一个难点是评测体系本身。我们最后设计了“按checklist对照”评估的 VideoScience-Judge。它会先为每个 prompt 自动生成一个针对性的 checklist，再做关键帧selection去选取一些因果上最关键的时刻，然后结合一些cv tool scaffolding去辅助判断，最后把分数落到几个维度上，比如 prompt 是否一致，现象是否符合科学预期，动态是否正确，物体在不该变化时是否保持不变，以及时空连续性之类。换句话说，我们不是在evaluate“视频好不好看”，而是在评估“这个视频有没有把应该发生的科学现象按正确的机制演出来”。</p>
+                <p>这项工作目前还在CVPR submission，也即将正式 release，论文目前在 arXiv 已经发布。相关的代码也已经开源在 GitHub。如果你对这类评测或者相关问题感兴趣，也非常欢迎交流和提出意见！</p>
+                <p>回头看过去的一些经历，让我意识到context 和 learn in public 并不是我一开始就想清楚的概念。</p>
+                <p>context 决定了一件事情能不能被真正推进，而 learn in public 则是一种选择，让已经走过的路径不至于被浪费，让阶段性的成果在长期里产生复利。</p>
+                <p>回头想一想，当初会选择把一些东西写下来，其实并不完全是因为想“输出观点”。一方面当然是为了整理自己的理解，把当下的思考固定下来，</p>
+                <p>另一方面，这些文字被更多人看到，收获了不少点赞和关注，也成为了一个意料之外但很重要的部分。</p>
+                <p>无论是点赞，评论，还是质疑和批评，对我来说都是真实存在的反馈。有些反馈会让我意识到表达上的模糊，有些会直接指出思考中的漏洞，也有些只是简单的认可，但它们都会在不同程度上影响我继续往前走的方式。</p>
+                <p>我并不把这些反馈简单理解为“正向激励”或者“外部评价”。更多时候，它们像是一种确认，让我知道写下来的东西并不是在真空中发生的，而是进入了一个更大的语境里。哪怕存在分歧，哪怕被反驳，本身也是一种交流和推进。</p>
+                <p>从这个角度看，反馈本身也是 learn in public 的一部分。它未必立刻带来答案，但会在时间中逐渐累积，推动我继续行动。不管这种动力来自认可，来自批评，还是来自被迫重新审视自己的想法，这些反馈都会提醒我，这些尝试并不是毫无意义的。</p>
+                <p>写作和记录也因此不再是额外的负担，而是和研究与工程实践并行的一部分，用来把已经形成的理解固定下来。</p>
+                <p>这篇文章并不是一次总结，而是一种阶段性的整理。在这个节点上，把这些东西写下来，对我来说已经足够。</p>
+            </section>
+        </article>
+
+        <a class="post-back" href="../index.html">← Back to home</a>
+    </main>
+</body>
+</html>

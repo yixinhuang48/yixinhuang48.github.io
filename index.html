@@ -18,6 +18,8 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#visitors">Visitors</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
@@ -208,6 +210,74 @@
                         </div>
                         <a href="https://github.com/lmgame-org/lmenv" target="_blank" class="project-link">View Project →</a>
                     </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visitors Section -->
+    <section id="visitors" class="section visitors">
+        <div class="container">
+            <h2 class="section-title">Global Visitors</h2>
+            <p class="section-subtitle">A privacy-friendly snapshot of where people have visited this site.</p>
+            <div class="map-card">
+                <div class="map-header">
+                    <div>
+                        <h3>Visitor Map</h3>
+                        <p>Illustrative regions from recent visits</p>
+                    </div>
+                    <span class="map-pill">Updated weekly</span>
+                </div>
+                <div class="map-visual" role="img" aria-label="Stylized world map with glowing visitor markers">
+                    <svg class="world-map" viewBox="0 0 800 400" aria-hidden="true">
+                        <rect x="40" y="120" width="220" height="120" rx="48"></rect>
+                        <rect x="190" y="210" width="140" height="150" rx="50"></rect>
+                        <rect x="310" y="105" width="160" height="110" rx="45"></rect>
+                        <rect x="360" y="210" width="170" height="140" rx="55"></rect>
+                        <rect x="520" y="120" width="230" height="120" rx="48"></rect>
+                        <rect x="620" y="250" width="140" height="80" rx="40"></rect>
+                        <rect x="260" y="60" width="70" height="45" rx="22"></rect>
+                    </svg>
+                    <span class="map-marker marker-na" aria-hidden="true"></span>
+                    <span class="map-marker marker-sa" aria-hidden="true"></span>
+                    <span class="map-marker marker-eu" aria-hidden="true"></span>
+                    <span class="map-marker marker-af" aria-hidden="true"></span>
+                    <span class="map-marker marker-as" aria-hidden="true"></span>
+                    <span class="map-marker marker-au" aria-hidden="true"></span>
+                </div>
+                <div class="map-legend">
+                    <div class="legend-item"><span class="legend-dot"></span> Recent visits</div>
+                    <div class="legend-item"><span class="legend-dot muted"></span> Past visits</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section blog">
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <p class="section-subtitle">Notes on LLM systems, evaluation, and research workflows.</p>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-date">Jan 29, 2026</div>
+                    <h3>Context & Learn in Public / 语境与公开学习</h3>
+                    <p>A bilingual reflection on why context matters and why learning in public compounds over time.</p>
+                    <div class="blog-tags">
+                        <span>Bilingual</span>
+                        <span>Reflection</span>
+                    </div>
+                    <a href="blog/context-learn-in-public.html" class="blog-link" aria-label="Read Context and Learn in Public">Read →</a>
+                </article>
+                <article class="blog-card coming-soon">
+                    <div class="blog-date">Coming soon</div>
+                    <h3>Deploying efficient inference stacks</h3>
+                    <p>Notes on GPU scheduling, memory tuning, and vLLM/SGLang integration.</p>
+                    <div class="blog-tags">
+                        <span>Systems</span>
+                        <span>GPU</span>
+                    </div>
+                    <span class="blog-link muted" aria-hidden="true">Drafting</span>
                 </article>
             </div>
         </div>
